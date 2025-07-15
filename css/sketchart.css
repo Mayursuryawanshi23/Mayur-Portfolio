@@ -1,0 +1,483 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* General text font */
+    color: #333; /* Default dark gray text for sections */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+    position: relative; /* Needed for z-index context */
+}
+
+/* Full-page Video Background */
+#background-video {
+    position: fixed; /* Stays fixed in the viewport */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2; /* Place it furthest back */
+    transform: translate(-50%, -50%); /* Centering trick */
+    left: 50%;
+    top: 50%;
+    object-fit: cover; /* Ensure it covers the entire area */
+}
+
+/* Overlay for video to ensure text readability across the entire page */
+#video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency (0.6 is 60% opaque) */
+    z-index: -1; /* Above video, below all content */
+}
+
+/* Header/Navigation */
+.sketch-header {
+    background-color: rgba(255, 255, 255, 0.1); /* Very slight transparency to see video */
+    backdrop-filter: blur(5px); /* Optional: Adds a cool frosted glass effect */
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between; /* Spreads logo and nav items */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width */
+    z-index: 100; /* Ensure it's above other content */
+    height: 80px; /* Explicit height for the header */
+}
+
+/* Logo Styling */
+.logo{
+    height: 70px;
+    width :200px;
+    padding-left: 9em;
+}
+
+.sketch-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display nav items inline */
+}
+
+.sketch-nav ul li {
+    margin-left: 20px; /* Spacing between nav items */
+}
+
+.sketch-nav ul li a {
+    text-decoration: none;
+    color: #fffb00; /* Black color for nav links */
+    font-weight: 600;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.sketch-nav ul li a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+/* Hero Section: Image behind content, fixed height, full width, below navbar */
+.sketch-hero {
+    margin-top: 80px; /* Starts exactly below the 80px fixed navigation bar */
+    height: 400px; /* Fixed height for the hero section as requested */
+    width: 100%; /* Full width as page */
+    position: relative;
+    overflow: hidden; /* Hide any content overflow */
+    z-index: 1; /* Above video overlay */
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box; /* Include padding/border in width/height */
+    background-color: transparent; /* Background remains transparent to see video */
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Fit to page width */
+    height: 100%; /* Fit to hero section height (700px) */
+    object-fit: cover; /* Cover the entire hero section, cropping if needed */
+    z-index: 0; /* Behind hero content */
+    animation: fadeIn 1.5s ease-out forwards; /* Fade in animation for the image */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the hero background image and video */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px; /* Add some padding for content */
+    animation: fadeInSlideUp 1s ease-out forwards;
+    /* background-image:url('../images/skech.jpg') ; */
+    background-color: rgba(197, 192, 192, 0.009); /* Slight dark overlay for text readability */
+    border-radius: 8px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-family: 'Shadows Into Light', cursive;
+    margin-bottom: 15px;
+    color: #fff; /* White text for content over video/image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.701); /* Stronger text shadow for readability */
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fffffff5; /* White text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Stronger text shadow */
+}
+
+/* General Section Styling (completely transparent background) */
+section:not(#hero) { /* Apply to all sections EXCEPT hero */
+    position: relative;
+    z-index: 1; /* Ensure sections are above video and overlay */
+    padding: 60px 30px; /* Standard section padding */
+    box-sizing: border-box;
+    background-color: transparent; /* COMPLETELY TRANSPARENT BACKGROUNDS */
+    box-shadow: none; /* No shadow */
+    margin: 20px auto; /* Space between sections and auto margins to center */
+    max-width: 1000px; /* Max width for content */
+    border-radius: 10px; /* Still apply border-radius for aesthetic */
+    color: #fff; /* White text for content over video */
+}
+
+/* Ensure headings and common text elements within sections are white */
+.sketch-gallery h2,
+.sketch-pricing h2,
+.sketch-contact h2 {
+    font-size: 36px;
+    font-family: 'Shadows Into Light', cursive;
+    margin-bottom: 30px;
+    color: #131212; /* White color for section titles */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.sketch-gallery p,
+.sketch-pricing p,
+.sketch-contact p {
+    color: #383232; /* White text for general content in sections */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+.pricing-note {
+    color: #eee; /* Lighter shade for note */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+
+/* General Section Styling (completely transparent background) */
+section:not(#hero) { /* Apply to all sections EXCEPT hero */
+    position: relative;
+    z-index: 1; /* Ensure sections are above video and overlay */
+    padding: 60px 30px; /* Standard section padding */
+    box-sizing: border-box;
+    background-color: transparent; /* COMPLETELY TRANSPARENT BACKGROUNDS */
+    box-shadow: none; /* No shadow */
+    margin: 20px auto; /* Space between sections and auto margins to center */
+    max-width: 1000px; /* Max width for content */
+    border-radius: 10px; /* Still apply border-radius for aesthetic */
+    color: #fff; /* White text for content over video */
+}
+
+/* Ensure headings and common text elements within sections are white */
+.sketch-gallery h2,
+.sketch-pricing h2,
+.sketch-contact h2 {
+    font-size: 36px;
+    font-family: 'Shadows Into Light', cursive;
+    margin-bottom: 30px;
+    color: #fff; /* White color for section titles */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.sketch-gallery p,
+.sketch-pricing p,
+.sketch-contact p {
+    color: #fff; /* White text for general content in sections */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+.pricing-note {
+    color: #eee; /* Lighter shade for note */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Gallery Grid Styling - For at least 5 images per row, professional layout */
+.sketch-grid {
+    display: grid;
+    /* This ensures a consistent grid, trying to fit as many columns as possible
+       each at least 200px wide. This setup should prevent overlapping. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Consistent gap between items */
+    margin-top: 30px;
+}
+
+/* Gallery Item Styling - Reverted with overlay text and cover fit */
+.sketch-item {
+    position: relative;
+    overflow: hidden; /* Important to contain image and prevent overflow */
+    border-radius: 10px; /* Clean rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle initial shadow */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smooth transitions */
+    background-color: rgba(255, 255, 255, 0.08); /* Slightly more visible transparent background for items */
+    /* Initial state for JS animation */
+    opacity: 0;
+    transform: translateY(30px); /* Simple slide-up animation */
+    display: flex; /* Use flex to center image for consistency */
+    justify-content: center;
+    align-items: center;
+    
+    /* REVISED HEIGHT: Aim for a good aspect ratio that fits images well. */
+    /* This height assumes your typical sketches are portrait or square. */
+    /* It's less extreme than 550px and allows for more items per row. */
+    height: 280px; 
+    
+    /* REMOVED fixed width: Let the grid determine the width based on minmax(200px, 1fr) */
+    /* width: 300px; <--- REMOVED THIS LINE TO FIX OVERLAPPING */
+    
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+.sketch-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover for the item */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    z-index: 2; /* Bring hovered item slightly to front */
+}
+
+.sketch-item img {
+    width: 100%; /* Image takes full width of its container */
+    height: 100%; /* Image takes full height of its container */
+    object-fit: cover; /* IMPORTANT: Cover the container, cropping if necessary */
+    display: block;
+    transition: opacity 0.3s ease-in-out; /* For overlay transition */
+    /* No filter for initial state or hover on img itself - handled by overlay */
+}
+
+.sketch-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.7); Dark semi-transparent overlay (reverted from 0 transparent) */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade in */
+    border-radius: 10px; /* Match item border-radius */
+}
+
+.sketch-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.sketch-item .overlay h3 {
+    font-size: 24px; /* Standard h3 font size for overlay */
+    margin-bottom: 0; /* Adjust as needed for spacing with other elements */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Pricing Section Styling - Centered image */
+.sketch-pricing .pricing-image {
+    max-width: 600px; /* Control the max width of the pricing image container */
+    margin: 0 auto; /* Center the pricing image */
+    background-color: rgba(0, 0, 0, 0.4); /* Slight background for the pricing image block */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-image img {
+    max-width: 100%; /* Ensure image scales within its container */
+    height: auto;
+    display: block; /* Make it a block element to respect margin: auto */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* Space between image and note */
+    /* Placeholder styles - REPLACE WITH YOUR ACTUAL IMAGE */
+    background-color: #eee;
+    min-height: 200px;
+    object-fit: contain; /* Ensure pricing image is not cropped */
+}
+
+.pricing-note {
+    font-size: 14px;
+    color: #eee;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Contact Section (Updated for direct links) */
+.contact-details-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    gap: 25px; /* Space between contact items */
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent dark background for items */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column; /* Icon and text stack vertically */
+    align-items: center;
+    text-decoration: none;
+    color: #fff; /* White text for contact items */
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Very transparent white for item background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    min-width: 200px; /* Ensure items have a minimum width */
+    flex-grow: 1; /* Allow items to grow to fill space */
+}
+
+.contact-item i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffbd39; /* Yellow icon color for visibility */
+    transition: color 0.3s ease;
+}
+
+.contact-item span {
+    text-align: center;
+}
+
+/* Hover effects for contact items */
+.contact-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    color: #ffbd39; /* Text color change on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* More transparent white on hover */
+}
+
+.contact-item:hover i {
+    color: #fff; /* White icon on hover for consistency */
+}
+
+/* Specific icon colors (optional, for branding) */
+.whatsapp-link i { color: #25D366; }
+.instagram-link i { color: #E4405F; }
+.email-link i { color: #D44638; }
+
+/* Specific hover colors for icons - Adjusted for new background */
+.whatsapp-link:hover i { color: #fff; }
+.instagram-link:hover i { color: #fff; }
+.email-link:hover i { color: #fff; }
+
+
+/* Footer */
+.sketch-footer {
+    background-color: #333; /* Solid background for the footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    position: relative; /* Ensure it stays above the video */
+    z-index: 1; /* Above video and overlay */
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sketch-header {
+        flex-direction: column;
+        padding: 15px 20px;
+        height: auto; /* Allow height to adjust on small screens */
+    }
+
+    .sketch-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: center;
+    }
+
+    .sketch-nav ul li {
+        margin: 0 10px 10px; /* Adjust spacing for wrapped items */
+    }
+
+    .sketch-hero {
+        margin-top: calc(80px + 15px); /* Adjust margin-top for header possibly expanding on mobile */
+        height: 400px; /* Smaller hero height on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .sketch-gallery h2,
+    .sketch-pricing h2,
+    .sketch-contact h2 {
+        font-size: 28px;
+    }
+
+    .sketch-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .sketch-item {
+        height: 150px; /* Adjusted item height for smaller screens */
+    }
+
+    .sketch-item img {
+        height: 100%; /* Image fills container height */
+    }
+
+    .pricing-image img {
+        max-width: 100%;
+    }
+
+    .contact-details-wrapper {
+        flex-direction: column; /* Stack contact items vertically */
+        padding: 20px;
+    }
+
+    .contact-item {
+        width: 100%; /* Full width for stacked items */
+        margin-bottom: 15px; /* Space between stacked items */
+    }
+}

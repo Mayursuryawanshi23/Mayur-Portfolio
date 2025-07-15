@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mayur-1923-skechart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch Art - Mayur</title>
+    <!-- Main font for general text -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Artistic font for titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sketchart.css">
+    <!-- Font Awesome for Icons (WhatsApp, Instagram, Email) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Full-page Video Background -->
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="videos/animation.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Overlay for video to ensure text readability -->
+    <div id="video-overlay"></div>
+
+    <!-- Header/Navigation for the Sketch Art page -->
+    <header class="sketch-header">
+        <img src="images/mlogo.png" class="logo">
+        <nav class="sketch-nav">
+            <ul>
+                <li><a href="index.html">Back to Portfolio</a></li>
+                <li><a href="#sketches">Sketches</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Image behind content, fixed height, full width, below navbar -->
+    <section id="hero" class="sketch-hero">
+        <!-- Image for the hero section, positioned behind the content -->
+        <!-- REPLACE src with your actual hero background image path -->
+        <div class="hero-content">
+            <h1>Capturing Moments in Charcoal and Ink...</h1>
+            <p>Welcome to my gallery of hand-drawn sketches. Browse through my work and feel free to reach out for custom requests.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section for showcasing sketches (reverted and refined) -->
+    <section id="sketches" class="sketch-gallery">
+        <h2>My Sketches...</h2>
+        <div class="sketch-grid">
+            <!-- Sketch Item 1 - REPLACE src with your actual sketch path -->
+            <div class="sketch-item">
+                <img src="images/skech1.jpg" ">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <div class="sketch-item">
+                <img src="images/skech2.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <div class="sketch-item">
+                <img src="images/skech3.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <div class="sketch-item">
+                <img src="images/skech4.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <div class="sketch-item">
+                <img src="images/skech5.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <div class="sketch-item">
+                <img src="images/skech6.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+          <div class="sketch-item">
+                <img src="images/skech7.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <div class="sketch-item">
+                <img src="images/skech8.jpg" alt="Portrait Sketch Example">
+                <div class="overlay"> 
+                </div>
+            </div>
+            <!-- Add more sketch items here as needed, following the same structure -->
+        </div>
+    </section>
+
+    <!-- Pricing Section to display pricing information -->
+    <section id="pricing" class="sketch-pricing">
+        <h2>Pricing...</h2>
+        <div class="pricing-image">
+            <!-- REPLACE src with your actual pricing image path -->
+            <img src="images/art2.jpg " alt="Sketch Pricing Details">
+            <p class="pricing-note">Note: Prices may vary based on complexity, size, and medium. Contact me for a personalized quote.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section with direct contact details -->
+    <section id="contact" class="sketch-contact">
+        <h2>Let's Connect...</h2>
+        <div class="contact-details-wrapper">
+            <!-- WhatsApp Link - REPLACE the number with your actual WhatsApp number -->
+            <a href="https://wa.me/8010997241" target="_blank" class="contact-item whatsapp-link">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp: +91 8010997241</span>
+            </a>
+            <!-- Instagram Link - REPLACE the URL with your actual Instagram profile URL -->
+            <a href="https://www.instagram.com/mayur_nox?igsh=MW41OGdiNjgzcTY5dQ==" target="_blank" class="contact-item instagram-link">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram: @mayur_nox</span>
+            </a>
+            <!-- Email Link - REPLACE the email address with your actual email -->
+            <a href="mailto:your.email@example.com" class="contact-item email-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email: mayursuryawanshi407@gmail.com</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer for the Sketch Art page -->
+    <footer class="sketch-footer">
+        <p>&copy; 2023 Mayur's Sketch Art - Nashik, Maharashtra, India</p>
+    </footer>
+
+    <script src="js/sketchart.js"></script>
+</body>
+</html>
